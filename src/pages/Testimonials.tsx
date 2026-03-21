@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
+import DynamicIcon from '../components/DynamicIcon'
 import { TESTIMONIALS } from '../data/constants'
 
 export default function Testimonials() {
@@ -16,7 +17,7 @@ export default function Testimonials() {
         <div className="container">
           <FadeInSection>
             <SectionTitle
-              badge="💬 Customer Reviews"
+              badge="Reviews"
               title={<>Real Stories from <span className="gradient-text">Real Customers</span></>}
               description="Our customer satisfaction speaks louder than words. Here's what they have to say."
             />
@@ -25,13 +26,25 @@ export default function Testimonials() {
             {TESTIMONIALS.map(t => (
               <FadeInSection key={t.id}>
                 <div className="glass-card testimonial-page-card">
-                  <div className="testimonial-page-quote">❝</div>
+                  <div className="testimonial-page-quote">
+                    <DynamicIcon name="quote" size={32} color="rgba(123, 184, 255, 0.3)" />
+                  </div>
                   <p className="testimonial-page-text">{t.text}</p>
                   <div className="testimonial-page-author">
                     <div className="testimonial-page-avatar">{t.name.charAt(0)}</div>
                     <div className="testimonial-page-info">
                       <div className="name">{t.name}</div>
-                      <div className="stars">{'★'.repeat(t.rating)}{'☆'.repeat(5 - t.rating)}</div>
+                      <div className="stars">
+                        {[...Array(5)].map((_, i) => (
+                           <DynamicIcon 
+                            key={i} 
+                            name="star" 
+                            size={16} 
+                            color={i < t.rating ? "#FFD700" : "#CBD5E1"}
+                            style={{ fill: i < t.rating ? "#FFD700" : "none" }}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -41,7 +54,6 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
       <section className="cta-section" id="testimonials-cta">
         <div className="container">
           <FadeInSection>
@@ -52,10 +64,10 @@ export default function Testimonials() {
               </p>
               <div className="cta-buttons">
                 <Link to="/contact" className="btn btn-primary btn-lg">
-                  Get Started →
+                  Get Started <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
                 </Link>
                 <Link to="/services" className="btn btn-secondary btn-lg">
-                  Our Services
+                  Explore Services
                 </Link>
               </div>
             </div>

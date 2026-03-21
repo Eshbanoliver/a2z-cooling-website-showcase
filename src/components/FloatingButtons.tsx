@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import DynamicIcon from './DynamicIcon'
 import { BUSINESS } from '../data/constants'
 
 export default function FloatingButtons() {
@@ -28,7 +29,7 @@ export default function FloatingButtons() {
           aria-label="Chat on WhatsApp"
           title="Chat on WhatsApp"
         >
-          💬
+          <DynamicIcon name="whatsapp" size={24} />
         </a>
         <a
           href={`tel:${BUSINESS.phone}`}
@@ -36,7 +37,7 @@ export default function FloatingButtons() {
           aria-label="Call us"
           title="Call us"
         >
-          📞
+          <DynamicIcon name="phone" size={24} />
         </a>
       </div>
 
@@ -48,7 +49,7 @@ export default function FloatingButtons() {
           aria-label="Scroll to top"
           title="Scroll to top"
         >
-          ↑
+          <DynamicIcon name="arrow-up" size={24} />
         </button>
       </div>
     </>

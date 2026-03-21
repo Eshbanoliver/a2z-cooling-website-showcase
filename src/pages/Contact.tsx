@@ -1,183 +1,201 @@
 import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
+import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
+import DynamicIcon from '../components/DynamicIcon'
 import { BUSINESS } from '../data/constants'
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' })
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
   const whatsappUrl = `https://wa.me/${BUSINESS.phoneClean}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
+    
     // Build WhatsApp message with form data
-    const msg = `Hello A2Z Cooling Point!%0A%0AName: ${form.name}%0APhone: ${form.phone}%0AEmail: ${form.email}%0AMessage: ${form.message}`
+    const msg = `Hello A2Z Cooling Point!%0A%0AName: ${formData.name}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0AService: ${formData.service}%0AMessage: ${formData.message}`
     window.open(`https://wa.me/${BUSINESS.phoneClean}?text=${msg}`, '_blank')
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
-    setForm({ name: '', phone: '', email: '', message: '' })
+    
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setSubmitted(true)
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' })
+    }, 1000)
   }
 
   return (
     <>
       <PageHeader
         title="Contact Us"
-        subtitle="We'd love to hear from you. Reach out to us anytime!"
+        subtitle="Get in touch with Jaipur's most trusted cooling experts"
       />
 
-      <section className="section section-ice" id="contact-section">
+      <section className="section section-ice" id="contact-info">
         <div className="container">
-          <div className="contact-grid">
-            {/* Contact Form */}
-            <FadeInSection>
-              <div className="glass-card contact-form-card">
-                <div className="contact-form">
-                  <h3>Send Us a Message</h3>
-                  <p>Fill out the form below and we'll get back to you shortly.</p>
-                  {submitted && (
-                    <div style={{
-                      padding: '14px 20px',
-                      background: 'rgba(37, 211, 102, 0.1)',
-                      border: '1px solid rgba(37, 211, 102, 0.3)',
-                      borderRadius: '12px',
-                      color: '#25d366',
-                      fontWeight: 600,
-                      fontSize: '0.9rem',
-                      marginBottom: '20px'
-                    }}>
-                      ✅ Message sent via WhatsApp! We'll respond soon.
-                    </div>
-                  )}
-                  <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <label htmlFor="contact-name">Full Name</label>
-                      <input
-                        type="text"
-                        id="contact-name"
-                        name="name"
-                        placeholder="Your full name"
-                        value={form.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="contact-phone">Phone Number</label>
-                      <input
-                        type="tel"
-                        id="contact-phone"
-                        name="phone"
-                        placeholder="Your phone number"
-                        value={form.phone}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="contact-email">Email Address</label>
-                      <input
-                        type="email"
-                        id="contact-email"
-                        name="email"
-                        placeholder="Your email address"
-                        value={form.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="contact-message">Your Message</label>
-                      <textarea
-                        id="contact-message"
-                        name="message"
-                        placeholder="How can we help you?"
-                        rows="5"
-                        value={form.message}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-                      Send Message via WhatsApp 💬
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </FadeInSection>
+          <FadeInSection>
+            <div className="contact-grid">
+              <div className="contact-details">
+                <SectionTitle
+                  badge="Get In Touch"
+                  title={<>We're Always <span className="gradient-text">Here to Help</span></>}
+                  description="Whether it's a routine service or an emergency repair, our team is ready to assist you."
+                />
 
-            {/* Contact Info */}
-            <div className="contact-info-section">
-              <FadeInSection>
-                <div className="glass-card contact-info-card">
-                  <h3>Get In Touch</h3>
-                  <div className="contact-detail">
-                    <div className="contact-detail-icon">📍</div>
+                <div className="contact-info-cards">
+                  <div className="glass-card contact-info-card">
+                    <div className="icon">
+                      <DynamicIcon name="phone" size={24} />
+                    </div>
                     <div>
-                      <h4>Our Location</h4>
+                      <h3>Phone</h3>
+                      <p><a href={`tel:${BUSINESS.phone}`}>{BUSINESS.phone}</a></p>
+                    </div>
+                  </div>
+                  <div className="glass-card contact-info-card">
+                    <div className="icon">
+                      <DynamicIcon name="mail" size={24} />
+                    </div>
+                    <div>
+                      <h3>Email</h3>
+                      <p><a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a></p>
+                    </div>
+                  </div>
+                  <div className="glass-card contact-info-card">
+                    <div className="icon">
+                      <DynamicIcon name="map-pin" size={24} />
+                    </div>
+                    <div>
+                      <h3>Address</h3>
                       <p>{BUSINESS.address}</p>
                     </div>
                   </div>
-                  <div className="contact-detail">
-                    <div className="contact-detail-icon">📞</div>
-                    <div>
-                      <h4>Phone Number</h4>
-                      <a href={`tel:${BUSINESS.phone}`}>{BUSINESS.phone}</a>
+                  <div className="glass-card contact-info-card">
+                    <div className="icon">
+                      <DynamicIcon name="clock-outline" size={24} />
                     </div>
-                  </div>
-                  <div className="contact-detail">
-                    <div className="contact-detail-icon">✉️</div>
                     <div>
-                      <h4>Email Address</h4>
-                      <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
+                      <h3>Business Hours</h3>
+                      <p>Mon - Sat: 9:00 AM - 9:00 PM</p>
+                      <p>Sunday: 10:00 AM - 4:00 PM</p>
                     </div>
                   </div>
                 </div>
-              </FadeInSection>
+              </div>
 
-              <FadeInSection>
-                <div className="glass-card contact-info-card">
-                  <h3>Quick Connect</h3>
-                  <p style={{ marginBottom: '20px', color: 'var(--gray-500)', fontSize: '0.9rem' }}>
-                    Prefer a quick chat? Reach us directly through WhatsApp or give us a call.
-                  </p>
-                  <div className="contact-action-buttons">
-                    <a
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact-action-btn whatsapp"
-                    >
-                      💬 Chat on WhatsApp
-                    </a>
-                    <a
-                      href={`tel:${BUSINESS.phone}`}
-                      className="contact-action-btn call"
-                    >
-                      📞 Call Us Now
-                    </a>
-                  </div>
-                </div>
-              </FadeInSection>
-
-              <FadeInSection>
-                <div className="glass-card contact-info-card">
-                  <h3>Business Hours</h3>
-                  <div className="contact-detail">
-                    <div className="contact-detail-icon">🕐</div>
-                    <div>
-                      <h4>Working Hours</h4>
-                      <p>Monday – Saturday: 9:00 AM – 8:00 PM</p>
-                      <p>Sunday: 10:00 AM – 4:00 PM</p>
+              <div className="glass-card-dark contact-form-container">
+                <h3 className="form-title">Send Us a Message</h3>
+                {submitted ? (
+                  <div className="success-message">
+                    <div className="success-icon">
+                      <DynamicIcon name="check" size={48} color="#7BB8FF" />
                     </div>
+                    <h4>Message Sent Successfully!</h4>
+                    <p>Thank you for reaching out. We will get back to you within 24 hours.</p>
+                    <button onClick={() => setSubmitted(false)} className="btn btn-outline" style={{ marginTop: '20px' }}>
+                      Send Another Message
+                    </button>
                   </div>
+                ) : (
+                  <form className="contact-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="name">Full Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="e.g., Rajesh Sharma"
+                        required
+                      />
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label htmlFor="email">Email Address</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="e.g., rajesh.sharma@example.com"
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="phone">Phone Number</label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="e.g., +91 9876543210"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="service">Service Required</label>
+                      <select id="service" name="service" value={formData.service} onChange={handleChange} required>
+                        <option value="">Select a Service</option>
+                        <option value="ac-repair">AC Repair & Service</option>
+                        <option value="ac-installation">AC Installation</option>
+                        <option value="geyser-repair">Geyser Repair</option>
+                        <option value="washing-machine">Washing Machine Repair</option>
+                        <option value="solar-ac">Solar AC Inquiry</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="message">Your Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell us about your requirements..."
+                        rows={4}
+                        required
+                      ></textarea>
+                    </div>
+                    <button type="submit" className="btn btn-primary btn-block" disabled={isSubmitting}>
+                      {isSubmitting ? 'Sending...' : (
+                        <>
+                          Send Message <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '10px' }} />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
+                
+                <div className="quick-action-divider">
+                  <span>OR</span>
                 </div>
-              </FadeInSection>
+                
+                <div className="contact-action-buttons">
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-block">
+                    <DynamicIcon name="whatsapp" size={18} style={{ marginRight: '10px' }} />
+                    WhatsApp Us Directly
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
+          </FadeInSection>
         </div>
       </section>
     </>

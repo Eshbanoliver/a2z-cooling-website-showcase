@@ -52,67 +52,67 @@ export const BUSINESS: Business = {
 export const SERVICES: Service[] = [
   {
     id: 'ac-repair',
-    icon: '🔧',
+    icon: 'ac-repair',
     title: 'AC Repair & Service',
     description: 'Complete AC repair, gas refilling, installation, and annual maintenance services for all brands. We ensure your AC runs at peak performance.',
   },
   {
     id: 'geyser-repair',
-    icon: '🚿',
+    icon: 'geyser-repair',
     title: 'Geyser Repair & Service',
     description: 'Expert geyser repair, thermostat replacement, element fixing, and regular maintenance for all types of water heaters.',
   },
   {
     id: 'washing-machine',
-    icon: '👕',
+    icon: 'washing-machine',
     title: 'Washing Machine Repair',
     description: 'Professional washing machine repair and service for top-load, front-load, and semi-automatic models of all major brands.',
   },
   {
     id: 'solar-ac',
-    icon: '☀️',
+    icon: 'solar-ac',
     title: 'Solar AC Selling',
     description: 'Energy-efficient solar-powered air conditioning systems. Go green while staying cool with our eco-friendly solar AC solutions.',
   },
   {
     id: 'cruise-ac',
-    icon: '❄️',
+    icon: 'cruise-ac',
     title: 'Cruise AC',
     description: 'Authorized sales, installation, and service for Cruise AC. Premium cooling solutions with advanced technology and energy efficiency.',
   },
   {
     id: 'voltas-ac',
-    icon: '🌀',
+    icon: 'voltas-ac',
     title: 'Voltas AC',
     description: 'Complete Voltas AC sales and service center. Expert installation, repair, and maintenance for all Voltas air conditioner models.',
   },
   {
     id: 'godrej-ac',
-    icon: '🏠',
+    icon: 'godrej-ac',
     title: 'Godrej AC',
     description: 'Trusted Godrej AC dealer. Sales, installation, and comprehensive after-sales service for Godrej cooling products.',
   },
   {
     id: 'lloyd-ac',
-    icon: '💨',
+    icon: 'lloyd-ac',
     title: 'Lloyd AC',
     description: 'Lloyd AC authorized dealer with full-range sales, expert installation, and reliable servicing for all Lloyd AC models.',
   },
   {
     id: 'lg-ac',
-    icon: '🌡️',
+    icon: 'lg-ac',
     title: 'LG AC',
     description: 'LG AC sales and service. Dual inverter technology, smart connectivity, and expert maintenance for LG air conditioners.',
   },
   {
     id: 'daikin-ac',
-    icon: '🔄',
+    icon: 'daikin-ac',
     title: 'Daikin AC',
     description: 'Premium Daikin AC solutions. Japanese technology, superior cooling, and professional service for all Daikin models.',
   },
   {
     id: 'samsung-ac',
-    icon: '📱',
+    icon: 'samsung-ac',
     title: 'Samsung AC',
     description: 'Samsung AC authorized dealer. Wind-Free cooling, AI auto comfort, and comprehensive service for Samsung ACs.',
   },
@@ -197,40 +197,40 @@ export const FAQS: FAQ[] = [
 ]
 
 export const METRICS: Metric[] = [
-  { icon: '🏆', value: '10+', label: 'Years Experience' },
-  { icon: '😊', value: '5000+', label: 'Happy Clients' },
-  { icon: '🔧', value: '8000+', label: 'Projects Done' },
-  { icon: '⭐', value: '4.9', label: 'Average Rating' },
+  { icon: 'trophy', value: '10+', label: 'Years Experience' },
+  { icon: 'smile', value: '5000+', label: 'Happy Clients' },
+  { icon: 'wrench', value: '8000+', label: 'Projects Done' },
+  { icon: 'star', value: '4.9', label: 'Average Rating' },
 ]
 
 export const VALUES: Value[] = [
   {
-    icon: '🎯',
+    icon: 'target',
     title: 'Quality First',
     description: 'We use genuine spare parts and deliver top-quality service ensuring long-lasting solutions for every customer.',
   },
   {
-    icon: '⏰',
+    icon: 'clock',
     title: 'Punctual Service',
     description: 'We respect your time. Our technicians arrive on schedule and aim to complete every job efficiently.',
   },
   {
-    icon: '💰',
+    icon: 'rupee',
     title: 'Fair Pricing',
     description: 'Transparent pricing with no hidden charges. We provide upfront quotes before starting any work.',
   },
   {
-    icon: '🛡️',
+    icon: 'shield',
     title: 'Trusted Experts',
     description: 'Our certified technicians are trained and experienced to handle all brands and complex repairs.',
   },
   {
-    icon: '🤝',
+    icon: 'handshake',
     title: 'Customer Care',
     description: 'We build lasting relationships with customers through exceptional service and post-service support.',
   },
   {
-    icon: '🌿',
+    icon: 'leaf',
     title: 'Eco Friendly',
     description: 'We promote energy-efficient and eco-friendly cooling solutions including solar AC systems.',
   },

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import DynamicIcon from './DynamicIcon'
 import { BUSINESS } from '../data/constants'
 
 const NAV_LINKS = [
@@ -35,7 +36,9 @@ export default function Navbar() {
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="main-navbar">
         <div className="container">
           <Link to="/" className="navbar-brand" aria-label="Home">
-            <span className="brand-icon">A2Z</span>
+            <span className="brand-icon">
+              <DynamicIcon name="snowflake" size={24} />
+            </span>
             <span>{BUSINESS.name}</span>
           </Link>
 
@@ -57,7 +60,8 @@ export default function Navbar() {
               className="btn btn-primary btn-sm"
               aria-label="Call us"
             >
-              📞 Call Now
+              <DynamicIcon name="phone" size={18} style={{ marginRight: '8px' }} />
+              Call Now
             </a>
           </div>
 

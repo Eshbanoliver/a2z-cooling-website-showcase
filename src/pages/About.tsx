@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
+import DynamicIcon from '../components/DynamicIcon'
 import { BUSINESS, VALUES, METRICS } from '../data/constants'
 
 export default function About() {
@@ -25,47 +26,28 @@ export default function About() {
                   a decade. Located at Mansarovar, we have built a strong reputation as a
                   reliable and customer-focused service provider.
                 </p>
-                <p>
-                  Our journey started with a simple commitment — to provide honest, quality,
-                  and affordable cooling and appliance services. Today, we stand as one of
-                  Jaipur's most trusted names, servicing thousands of happy customers across
-                  residential, commercial, and industrial segments.
-                </p>
-                <p>
-                  We are authorized dealers for multiple premium AC brands including Voltas,
-                  Godrej, Lloyd, LG, Daikin, Samsung, and Cruise. Our team stays updated
-                  with the latest technologies and attends regular training sessions to
-                  ensure top-notch service delivery.
-                </p>
                 <div className="about-expertise">
-                  <div className="about-expertise-item">
-                    <span className="check">✅</span>
-                    <span>AC Repair & Installation</span>
-                  </div>
-                  <div className="about-expertise-item">
-                    <span className="check">✅</span>
-                    <span>Geyser & Water Heater</span>
-                  </div>
-                  <div className="about-expertise-item">
-                    <span className="check">✅</span>
-                    <span>Washing Machine Service</span>
-                  </div>
-                  <div className="about-expertise-item">
-                    <span className="check">✅</span>
-                    <span>Solar AC Solutions</span>
-                  </div>
-                  <div className="about-expertise-item">
-                    <span className="check">✅</span>
-                    <span>Multi-Brand AC Sales</span>
-                  </div>
-                  <div className="about-expertise-item">
-                    <span className="check">✅</span>
-                    <span>Annual Maintenance</span>
-                  </div>
+                  {[
+                    'AC Repair & Installation',
+                    'Geyser & Water Heater',
+                    'Washing Machine Service',
+                    'Solar AC Solutions',
+                    'Multi-Brand AC Sales',
+                    'Annual Maintenance'
+                  ].map((item) => (
+                    <div className="about-expertise-item" key={item}>
+                      <span className="check">
+                        <DynamicIcon name="check" size={16} />
+                      </span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="about-intro-image">
-                <div className="icon">🏢</div>
+                <div className="icon">
+                  <DynamicIcon name="map-pin" size={40} />
+                </div>
                 <h3>A Decade of Trust</h3>
                 <p>
                   Serving 5000+ happy customers across Jaipur with certified expertise,
@@ -82,7 +64,7 @@ export default function About() {
         <div className="container">
           <FadeInSection>
             <SectionTitle
-              badge="📊 Our Impact"
+              badge="Our Impact"
               title={<>Numbers That <span className="gradient-text">Speak</span></>}
               description="A track record of excellence, trust, and customer satisfaction."
             />
@@ -91,7 +73,9 @@ export default function About() {
             <div className="metrics-grid">
               {METRICS.map((m, i) => (
                 <div className="metric-card" key={i}>
-                  <div className="metric-icon">{m.icon}</div>
+                  <div className="metric-icon">
+                    <DynamicIcon name={m.icon} size={32} />
+                  </div>
                   <div className="metric-value">{m.value}</div>
                   <div className="metric-label">{m.label}</div>
                 </div>
@@ -106,7 +90,7 @@ export default function About() {
         <div className="container">
           <FadeInSection>
             <SectionTitle
-              badge="🎯 Mission & Vision"
+              badge="Mission & Vision"
               title="Our Guiding Principles"
               description="The beliefs and goals that shape everything we do."
             />
@@ -114,21 +98,24 @@ export default function About() {
           <FadeInSection>
             <div className="mv-grid">
               <div className="glass-card-dark mv-card">
-                <div className="mv-icon">🚀</div>
+                <div className="mv-icon">
+                  <DynamicIcon name="rocket" size={40} color="#7BB8FF" />
+                </div>
                 <h3 style={{ color: '#fff' }}>Our Mission</h3>
                 <p>
                   To deliver top-quality cooling and appliance repair services with honesty,
                   affordability, and speed. We strive to be the first choice for every home
-                  and business in Jaipur by consistently exceeding customer expectations.
+                  and business in Jaipur.
                 </p>
               </div>
               <div className="glass-card-dark mv-card">
-                <div className="mv-icon">🔭</div>
+                <div className="mv-icon">
+                  <DynamicIcon name="search" size={40} color="#B8A9FF" />
+                </div>
                 <h3 style={{ color: '#fff' }}>Our Vision</h3>
                 <p>
                   To expand across Rajasthan as the leading eco-friendly cooling solutions
-                  brand, pioneering solar AC adoption and setting industry benchmarks for
-                  customer care, technical innovation, and service excellence.
+                  brand, pioneering solar AC adoption and setting industry benchmarks.
                 </p>
               </div>
             </div>
@@ -141,7 +128,7 @@ export default function About() {
         <div className="container">
           <FadeInSection>
             <SectionTitle
-              badge="💎 Core Values"
+              badge="Core Values"
               title={<>Values We <span className="gradient-text">Live By</span></>}
               description="These principles are at the heart of every interaction and service we provide."
             />
@@ -150,7 +137,9 @@ export default function About() {
             {VALUES.map((v, i) => (
               <FadeInSection key={i}>
                 <div className="glass-card value-card">
-                  <div className="value-icon">{v.icon}</div>
+                  <div className="value-icon">
+                    <DynamicIcon name={v.icon} size={32} />
+                  </div>
                   <h3>{v.title}</h3>
                   <p>{v.description}</p>
                 </div>
@@ -171,10 +160,10 @@ export default function About() {
               </p>
               <div className="cta-buttons">
                 <Link to="/contact" className="btn btn-primary btn-lg">
-                  Contact Us →
+                  Contact Us <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
                 </Link>
                 <Link to="/services" className="btn btn-secondary btn-lg">
-                  Our Services
+                  Explore Services
                 </Link>
               </div>
             </div>
