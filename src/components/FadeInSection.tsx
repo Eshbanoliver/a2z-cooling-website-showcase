@@ -1,7 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-export default function FadeInSection({ children, className = '' }) {
-  const ref = useRef(null)
+interface FadeInSectionProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function FadeInSection({ children, className = '' }: FadeInSectionProps) {
+  const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {

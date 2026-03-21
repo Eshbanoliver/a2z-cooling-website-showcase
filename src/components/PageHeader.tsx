@@ -1,4 +1,9 @@
-export default function PageHeader({ title, subtitle }) {
+interface PageHeaderProps {
+  title: string;
+  subtitle?: string;
+}
+
+export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
     <div className="page-header">
       <div className="container">

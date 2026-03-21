@@ -1,6 +1,11 @@
 import { useState } from 'react'
 
-export default function FaqItem({ question, answer }) {
+interface FaqItemProps {
+  question: string;
+  answer: string;
+}
+
+export default function FaqItem({ question, answer }: FaqItemProps) {
   const [open, setOpen] = useState(false)
 
   return (

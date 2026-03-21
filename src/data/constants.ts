@@ -1,4 +1,45 @@
-export const BUSINESS = {
+export interface Business {
+  name: string;
+  phone: string;
+  phoneClean: string;
+  email: string;
+  address: string;
+  city: string;
+  whatsappMessage: string;
+}
+
+export interface Service {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  text: string;
+  rating: number;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export interface Metric {
+  icon: string;
+  value: string;
+  label: string;
+}
+
+export interface Value {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export const BUSINESS: Business = {
   name: 'A2Z Cooling Point',
   phone: '+91 9782861818',
   phoneClean: '919782861818',
@@ -8,7 +49,7 @@ export const BUSINESS = {
   whatsappMessage: 'Hello! I need cooling & appliance service. Please assist me.',
 }
 
-export const SERVICES = [
+export const SERVICES: Service[] = [
   {
     id: 'ac-repair',
     icon: '🔧',
@@ -77,7 +118,7 @@ export const SERVICES = [
   },
 ]
 
-export const TESTIMONIALS = [
+export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     name: 'Rajesh Sharma',
@@ -128,7 +169,7 @@ export const TESTIMONIALS = [
   },
 ]
 
-export const FAQS = [
+export const FAQS: FAQ[] = [
   {
     question: 'What areas in Jaipur do you serve?',
     answer: 'We serve all major areas of Jaipur including Mansarovar, Vaishali Nagar, Malviya Nagar, Tonk Road, Ajmer Road, and surrounding areas. Contact us for service availability in your locality.',
@@ -155,14 +196,14 @@ export const FAQS = [
   },
 ]
 
-export const METRICS = [
+export const METRICS: Metric[] = [
   { icon: '🏆', value: '10+', label: 'Years Experience' },
   { icon: '😊', value: '5000+', label: 'Happy Clients' },
   { icon: '🔧', value: '8000+', label: 'Projects Done' },
   { icon: '⭐', value: '4.9', label: 'Average Rating' },
 ]
 
-export const VALUES = [
+export const VALUES: Value[] = [
   {
     icon: '🎯',
     title: 'Quality First',
