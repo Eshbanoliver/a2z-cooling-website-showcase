@@ -331,20 +331,29 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: var(--container);
   z-index: 1000;
-  padding: 12px 0;
-  transition: var(--transition);
+  padding: 10px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 100px; /* Fully pill-shaped */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.85);
+  top: 10px;
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(123, 184, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(5, 15, 42, 0.08);
+  border: 1px solid rgba(123, 184, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(5, 15, 42, 0.15);
   padding: 8px 0;
 }
 
