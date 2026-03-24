@@ -304,39 +304,54 @@ export default function Home() {
       </section>
 
       {/* ===== MISSION & VISION ===== */}
-      <section className="section section-dark" id="mission-vision">
+      <section className="section section-dark mission-vision-vibrant" id="mission-vision">
+        <div className="mv-backdrop-glow" />
         <div className="container">
           <FadeInSection>
             <SectionTitle
               badge="Mission & Vision"
-              title="Driving Force Behind Our Success"
+              badgeClass="badge-blue"
+              title={<span style={{ color: '#fff' }}>Driving Force Behind Our <span className="gradient-text">Success</span></span>}
               description="Our mission and vision define who we are and what drives us every single day."
             />
           </FadeInSection>
-          <FadeInSection>
-            <div className="mv-grid">
-              <div className="glass-card-dark mv-card">
-                <div className="mv-icon">
-                  <DynamicIcon name="rocket" size={40} color="#7BB8FF" />
+          <div className="mv-vibrant-grid">
+            <FadeInSection delay={0.2}>
+              <div className="mv-card-vibrant mission-card">
+                <div className="mv-icon-float">
+                  <DynamicIcon name="rocket" size={40} />
                 </div>
-                <h3 style={{ color: '#fff' }}>Our Mission</h3>
-                <p>
-                  To provide reliable, affordable, and high-quality cooling and appliance
-                  services to every household and business in Jaipur.
-                </p>
-              </div>
-              <div className="glass-card-dark mv-card">
-                <div className="mv-icon">
-                  <DynamicIcon name="search" size={40} color="#B8A9FF" />
+                <div className="mv-content">
+                  <h3 className="mv-title">Our Mission</h3>
+                  <div className="mv-divider" />
+                  <p className="mv-text">
+                    To provide reliable, affordable, and high-quality cooling and appliance
+                    services for every household and business in Jaipur. We strive for 
+                    unmatched reliability in every repair.
+                  </p>
                 </div>
-                <h3 style={{ color: '#fff' }}>Our Vision</h3>
-                <p>
-                  To become Rajasthan's leading cooling solutions provider by expanding our
-                  services, embracing green technology, and setting new standards.
-                </p>
+                <div className="mv-card-glow" />
               </div>
-            </div>
-          </FadeInSection>
+            </FadeInSection>
+            
+            <FadeInSection delay={0.4}>
+              <div className="mv-card-vibrant vision-card">
+                <div className="mv-icon-float">
+                  <DynamicIcon name="search" size={40} />
+                </div>
+                <div className="mv-content">
+                  <h3 className="mv-title">Our Vision</h3>
+                  <div className="mv-divider" />
+                  <p className="mv-text">
+                    To become Rajasthan's leading cooling solutions provider by expanding our
+                    footprint, embracing green technology, and setting industry-leading 
+                    maintenance standards.
+                  </p>
+                </div>
+                <div className="mv-card-glow" />
+              </div>
+            </FadeInSection>
+          </div>
         </div>
       </section>
 
