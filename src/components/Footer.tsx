@@ -71,14 +71,13 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>
-            &copy; 2026 {BUSINESS.name}. All Rights Reserved. Powered by{' '}
+            ©️ Copyright 2026 | {BUSINESS.name} | All Rights Reserved | Powered by{' '}
             <a
               href="https://shapesway.in"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#7BB8FF' }}
             >
-              Shapesway Technologies
+              Shapesway Technologies Pvt. Ltd.
             </a>
           </p>
         </div>
