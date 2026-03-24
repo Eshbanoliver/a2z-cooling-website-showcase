@@ -62,8 +62,14 @@ const DynamicIcon: React.FC<DynamicIconProps> = ({ name, className, size = 24, c
     'check': 'Check',
   };
 
-  const lucideName = iconMap[name] || name;
-  const IconComponent = (LucideIcons as any)[lucideName];
+  let lucideName = iconMap[name] || name;
+  let IconComponent = (LucideIcons as any)[lucideName];
+
+  // Try PascalCase if not found (e.g. 'rocket' -> 'Rocket')
+  if (!IconComponent && typeof lucideName === 'string') {
+    const pascalName = lucideName.charAt(0).toUpperCase() + lucideName.slice(1);
+    IconComponent = (LucideIcons as any)[pascalName];
+  }
 
   if (!IconComponent) {
     console.warn(`Icon "${name}" (mapped to "${lucideName}") not found in lucide-react`);
