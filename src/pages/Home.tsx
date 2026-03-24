@@ -384,38 +384,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WHY CHOOSE US ===== */}
-      <section className="section section-dark" id="why-choose-us">
-        <div className="container">
+      {/* ===== WHY CHOOSE US VIBRANT ===== */}
+      <section className="section wcu-vibrant-section" id="why-choose-us">
+        <div className="wcu-mesh-bg" />
+        <div className="container relative z-10">
           <FadeInSection>
             <SectionTitle
               badge="Why Choose Us"
-              title="The A2Z Advantage"
-              description="Experience the difference with our customer-first approach and certified expertise."
+              badgeClass="badge-white"
+              title={<span style={{ color: '#fff' }}>The A2Z <span className="gradient-text-light">Advantage</span></span>}
+              description="Experience the difference with our customer-first approach, certified expertise, and unwavering commitment to quality."
             />
           </FadeInSection>
-          <FadeInSection>
-            <div className="wcu-grid">
-              {[
-                { icon: 'bolt', title: 'Quick Response', desc: 'Same-day service with rapid turnaround times. We understand the urgency of cooling breakdowns.' },
-                { icon: 'wrench', title: 'Expert Technicians', desc: 'Our certified professionals are trained on the latest technologies across all major brands.' },
-                { icon: 'gem', title: 'Genuine Parts', desc: 'We use only original spare parts backed by manufacturer warranties for lasting repairs.' },
-                { icon: 'rupee', title: 'Best Pricing', desc: 'Competitive and transparent pricing with no hidden charges. Get value for every rupee.' },
-                { icon: 'shield-check', title: 'Service Warranty', desc: 'All our repairs come with a service warranty, giving you complete peace of mind.' },
-                { icon: 'smile', title: '5000+ Happy Clients', desc: 'A decade of trust and thousands of satisfied customers across Jaipur speak for our quality.' },
-              ].map((item, i) => (
-                <div className="glass-card-dark wcu-card" key={i}>
-                  <div className="wcu-icon">
+          <div className="wcu-vibrant-grid">
+            {[
+              { icon: 'bolt', title: 'Quick Response', desc: 'Same-day service with rapid turnaround times. We understand the urgency of cooling breakdowns.' },
+              { icon: 'wrench', title: 'Expert Technicians', desc: 'Our certified professionals are trained on the latest technologies across all major brands.' },
+              { icon: 'gem', title: 'Genuine Parts', desc: 'We use only original spare parts backed by manufacturer warranties for lasting repairs.' },
+              { icon: 'rupee', title: 'Best Pricing', desc: 'Competitive and transparent pricing with no hidden charges. Get value for every rupee.' },
+              { icon: 'shield-check', title: 'Service Warranty', desc: 'All our repairs come with a service warranty, giving you complete peace of mind.' },
+              { icon: 'smile', title: '5000+ Happy Clients', desc: 'A decade of trust and thousands of satisfied customers across Jaipur speak for our quality.' },
+            ].map((item, i) => (
+              <FadeInSection key={i} delay={i * 0.1}>
+                <div className={`wcu-vibrant-card wcu-color-${i + 1}`}>
+                  <div className="wcu-icon-wrapper">
                     <DynamicIcon name={item.icon} size={28} />
                   </div>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
+                  <div className="wcu-content">
+                    <h3 className="wcu-title">{item.title}</h3>
+                    <p className="wcu-desc">{item.desc}</p>
                   </div>
+                  <div className="wcu-card-accent" />
                 </div>
-              ))}
-            </div>
-          </FadeInSection>
+              </FadeInSection>
+            ))}
+          </div>
         </div>
       </section>
 

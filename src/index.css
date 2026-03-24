@@ -1536,54 +1536,139 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--gray-600);
 }
 
-/* ===== WHY CHOOSE US ===== */
-.wcu-grid {
+/* ===== WHY CHOOSE US VIBRANT ===== */
+.wcu-vibrant-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: #051024;
+}
+
+.wcu-mesh-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(at 0% 0%, rgba(123, 184, 255, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(184, 169, 255, 0.15) 0px, transparent 50%);
+  filter: blur(60px);
+  z-index: 0;
+  animation: meshMove 15s ease-in-out infinite alternate;
+}
+
+@keyframes meshMove {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.2) translate(5%, 5%); }
+}
+
+.wcu-vibrant-section .section-description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.wcu-vibrant-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
 }
 
-.wcu-card {
-  padding: 32px;
+.wcu-vibrant-card {
+  position: relative;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-2xl);
   display: flex;
-  gap: 20px;
+  gap: 24px;
   align-items: flex-start;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  overflow: hidden;
 }
 
-.wcu-icon {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  background: rgba(123, 184, 255, 0.15);
-  border-radius: var(--radius-md);
+.wcu-color-1 { --wcu-accent: #00f2fe; }
+.wcu-color-2 { --wcu-accent: #764ba2; }
+.wcu-color-3 { --wcu-accent: #fbc2eb; }
+.wcu-color-4 { --wcu-accent: #4facfe; }
+.wcu-color-5 { --wcu-accent: #2af598; }
+.wcu-color-6 { --wcu-accent: #a18cd1; }
+
+.wcu-vibrant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, var(--wcu-accent), transparent 60%);
+  opacity: 0.05;
+  transition: var(--transition);
+  z-index: 0;
+}
+
+.wcu-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--wcu-accent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.wcu-vibrant-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.wcu-vibrant-card:hover::before {
+  opacity: 0.15;
+}
+
+.wcu-vibrant-card:hover .wcu-card-accent {
+  opacity: 1;
+}
+
+.wcu-icon-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-}
-
-.section-dark .wcu-icon {
-  background: rgba(123, 184, 255, 0.15);
-}
-
-.wcu-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.wcu-card p {
-  color: var(--gray-500);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.section-dark .wcu-card h3 {
   color: var(--white);
+  z-index: 1;
+  transition: var(--transition);
 }
 
-.section-dark .wcu-card p {
-  color: var(--gray-400);
+.wcu-vibrant-card:hover .wcu-icon-wrapper {
+  background: var(--wcu-accent);
+  color: #051024;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.wcu-content {
+  position: relative;
+  z-index: 1;
+}
+
+.wcu-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.wcu-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ===== CTA SECTION ===== */
