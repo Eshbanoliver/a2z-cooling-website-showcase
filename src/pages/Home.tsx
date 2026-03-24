@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SectionTitle from '../components/SectionTitle'
 import FaqItem from '../components/FaqItem'
@@ -5,31 +6,80 @@ import FadeInSection from '../components/FadeInSection'
 import DynamicIcon from '../components/DynamicIcon'
 import { BUSINESS, SERVICES, TESTIMONIALS, FAQS, METRICS, VALUES } from '../data/constants'
 
+// Slider Images
+import hero1 from '../assets/hero-1.jpg'
+import hero2 from '../assets/hero-2.jpg'
+import hero3 from '../assets/hero-3.jpg'
+
+const HERO_SLIDES = [
+  {
+    id: 1,
+    image: hero1,
+    badge: "Smart Cooling Technology",
+    title: <>Precision Engineered<br /><span className="highlight">Cooling Solutions</span></>,
+    description: "Experience the next level of comfort with our smart, energy-efficient split AC and centralized cooling systems for modern homes."
+  },
+  {
+    id: 2,
+    image: hero2,
+    badge: "High Performance HVAC",
+    title: <>Industrial Grade<br /><span className="highlight">Reliability</span></>,
+    description: "From large-scale VRV systems to commercial chiller plants — we provide heavy-duty cooling installations built for Jaipur's climate."
+  },
+  {
+    id: 3,
+    image: hero3,
+    badge: "Advanced Engineering",
+    title: <>Expert Service &<br /><span className="highlight">Premium Maintenance</span></>,
+    description: "Our certified experts use state-of-the-art diagnostic tools to ensure your appliances run at peak efficiency year-round."
+  }
+]
+
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
   const whatsappUrl = `https://wa.me/${BUSINESS.phoneClean}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const slide = HERO_SLIDES[currentSlide]
 
   return (
     <>
       {/* ===== HERO SECTION ===== */}
       <section className="hero-section" id="hero">
+        <div className="hero-slider">
+          {HERO_SLIDES.map((s, index) => (
+            <div 
+              key={s.id} 
+              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${s.image})` }}
+            />
+          ))}
+          <div className="hero-overlay" />
+        </div>
+
         <div className="hero-shapes">
           <div className="hero-shape hero-shape-1" />
           <div className="hero-shape hero-shape-2" />
           <div className="hero-shape hero-shape-3" />
         </div>
+
         <div className="container">
           <div className="hero-content">
             <span className="hero-badge">
               <DynamicIcon name="snowflake" size={16} style={{ marginRight: '8px' }} />
-              Jaipur's Trusted Cooling Experts
+              {slide.badge}
             </span>
             <h1 className="hero-title">
-              Expert Cooling &<br />
-              <span className="highlight">Appliance Solutions</span>
+              {slide.title}
             </h1>
             <p className="hero-description">
-              From AC repair to solar cooling systems — we deliver premium service for
-              all your cooling and home appliance needs with guaranteed satisfaction.
+              {slide.description}
             </p>
             <div className="hero-buttons">
               <Link to="/services" className="btn btn-primary btn-lg">
@@ -39,6 +89,7 @@ export default function Home() {
                 Get Free Quote
               </Link>
             </div>
+            
             <div className="hero-stats">
               <div className="hero-stat">
                 <div className="hero-stat-number">10<span className="accent">+</span></div>
@@ -58,6 +109,17 @@ export default function Home() {
                 </div>
                 <div className="hero-stat-label">Client Rating</div>
               </div>
+            </div>
+
+            <div className="hero-dots">
+              {HERO_SLIDES.map((_, index) => (
+                <button 
+                  key={index} 
+                  className={`hero-dot ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>

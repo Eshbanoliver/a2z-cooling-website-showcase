@@ -468,7 +468,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== HERO SECTION ===== */
 .hero-section {
   min-height: 100vh;
-  background: var(--gradient-hero);
+  background: var(--navy);
   display: flex;
   align-items: center;
   position: relative;
@@ -498,14 +498,46 @@ h1, h2, h3, h4, h5, h6 {
   animation: heroGlow 10s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes heroGlow {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(30px, -20px) scale(1.1); }
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 5s ease-out;
+  transform: scale(1.1);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(5, 15, 42, 0.85) 0%, rgba(5, 15, 42, 0.6) 100%);
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
@@ -568,6 +600,31 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.hero-dot {
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-dot.active {
+  background: var(--blue);
+  width: 60px;
+}
+
 .hero-stat {
   text-align: center;
 }
@@ -596,7 +653,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-shapes {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 5;
   pointer-events: none;
 }
 
