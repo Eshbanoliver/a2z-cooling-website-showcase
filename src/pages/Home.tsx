@@ -447,48 +447,58 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS PREVIEW ===== */}
-      <section className="section section-ice" id="testimonials-preview">
-        <div className="container">
+      <section className="section testimonials-vibrant-section" id="testimonials-preview">
+        <div className="testimonial-bg-shapes">
+          <div className="shape shape-1"><DynamicIcon name="quote" size={120} /></div>
+          <div className="shape shape-2"><DynamicIcon name="quote" size={120} /></div>
+        </div>
+        
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <FadeInSection>
             <SectionTitle
-              badge="Testimonials"
+              badge="Client Stories"
               title={<>What Our Clients <span className="gradient-text">Say</span></>}
-              description="Don't just take our word for it — hear from our happy customers."
+              description="Discover why thousands of customers in Jaipur trust A2Z Cooling Point for their cooling and appliance needs."
             />
           </FadeInSection>
-          <div className="testimonials-grid">
-            {TESTIMONIALS.slice(0, 3).map(t => (
-              <FadeInSection key={t.id}>
-                <div className="glass-card testimonial-card">
+          
+          <div className="testimonials-marquee-container">
+            <div className="testimonials-marquee-track">
+              {[...TESTIMONIALS, ...TESTIMONIALS].map((t, index) => (
+                <div key={`${t.id}-${index}`} className="testimonial-vibrant-card">
                   <div className="testimonial-stars">
                     {[...Array(5)].map((_, i) => (
                       <DynamicIcon 
                         key={i} 
                         name="star" 
-                        size={16} 
-                        color={i < t.rating ? "#FFD700" : "#CBD5E1"}
-                        style={{ fill: i < t.rating ? "#FFD700" : "none" }}
+                        size={18} 
+                        color={i < t.rating ? "#FFB800" : "#E2E8F0"}
+                        style={{ fill: i < t.rating ? "#FFB800" : "none" }}
                       />
                     ))}
                   </div>
                   <p className="testimonial-text">"{t.text}"</p>
-                  <div className="testimonial-author">
-                    <div className="testimonial-avatar">
+                  <div className="testimonial-author-wrapper">
+                    <div className="testimonial-avatar-glow">
                       {t.name.charAt(0)}
                     </div>
-                    <div>
+                    <div className="testimonial-author-info">
                       <div className="testimonial-name">{t.name}</div>
                       <div className="testimonial-role">Verified Customer</div>
                     </div>
+                    <div className="testimonial-quote-icon">
+                      <DynamicIcon name="quote" size={24} />
+                    </div>
                   </div>
                 </div>
-              </FadeInSection>
-            ))}
+              ))}
+            </div>
           </div>
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+          
+          <div style={{ textAlign: 'center', marginTop: '60px' }}>
             <FadeInSection>
-              <Link to="/testimonials" className="btn btn-outline">
-                Read All Reviews <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
+              <Link to="/testimonials" className="btn btn-primary btn-lg">
+                View All Reviews <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
               </Link>
             </FadeInSection>
           </div>
