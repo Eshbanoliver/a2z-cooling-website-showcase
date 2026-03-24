@@ -4,13 +4,19 @@ import SectionTitle from '../components/SectionTitle'
 import FaqItem from '../components/FaqItem'
 import FadeInSection from '../components/FadeInSection'
 import DynamicIcon from '../components/DynamicIcon'
-import { BUSINESS, SERVICES, TESTIMONIALS, FAQS, METRICS, VALUES } from '../data/constants'
+import { BUSINESS, TESTIMONIALS, FAQS, METRICS, VALUES } from '../data/constants'
 
 // Slider Images
 import hero1 from '../assets/hero-1.jpg'
 import hero2 from '../assets/hero-2.jpg'
 import hero3 from '../assets/hero-3.jpg'
 import aboutImg from '../assets/about-img.jpg'
+import service1 from '../assets/service-1.jpg'
+import service2 from '../assets/service-2.jpg'
+import service3 from '../assets/service-3.jpg'
+import service4 from '../assets/service-4.jpg'
+import service5 from '../assets/service-5.jpg'
+import service6 from '../assets/service-6.jpg'
 
 const HERO_SLIDES = [
   {
@@ -33,6 +39,51 @@ const HERO_SLIDES = [
     badge: "Advanced Engineering",
     title: <>Expert Service &<br /><span className="highlight">Premium Maintenance</span></>,
     description: "Our certified experts use state-of-the-art diagnostic tools to ensure your appliances run at peak efficiency year-round."
+  }
+]
+
+const SERVICES_DATA = [
+  {
+    title: 'AC Repair & Service',
+    image: service1,
+    icon: 'wrench',
+    description: 'Complete AC repair, gas refilling, installation, and annual maintenance services for all brands. We ensure your AC runs at peak performance.',
+    badge: 'Popular'
+  },
+  {
+    title: 'Geyser Repair & Service',
+    image: service2,
+    icon: 'droplets',
+    description: 'Expert geyser repair, thermostat replacement, element fixing, and regular maintenance for all types of water heaters.',
+    badge: 'Essential'
+  },
+  {
+    title: 'Washing Machine Repair',
+    image: service3,
+    icon: 'refresh-cw',
+    description: 'Professional washing machine repair and service for top-load, front-load, and semi-automatic models of all major brands.',
+    badge: 'Expert'
+  },
+  {
+    title: 'Solar AC Solutions',
+    image: service4,
+    icon: 'sun',
+    description: 'Energy-efficient solar-powered air conditioning systems. Go green while staying cool with our eco-friendly solar AC installations.',
+    badge: 'Eco-Friendly'
+  },
+  {
+    title: 'Cruise AC Excellence',
+    image: service5,
+    icon: 'wind',
+    description: 'Authorized sales, installation, and service for Cruise AC. Premium cooling solutions with advanced technology and energy efficiency.',
+    badge: 'Premium'
+  },
+  {
+    title: 'Voltas AC Expertise',
+    image: service6,
+    icon: 'zap',
+    description: 'Complete Voltas AC sales and service center. Expert installation, repair, and maintenance for all Voltas air conditioner models.',
+    badge: 'Certified'
   }
 ]
 
@@ -210,35 +261,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SERVICES OVERVIEW ===== */}
-      <section className="section section-gradient" id="services-overview">
+      {/* ===== SERVICES SECTION ===== */}
+      <section className="section section-cloud" id="services">
         <div className="container">
-          <FadeInSection>
-            <SectionTitle
-              badge="Our Services"
-              title={<>What We <span className="gradient-text">Offer</span></>}
-              description="Comprehensive cooling and appliance solutions tailored to your needs. We service all major brands with expertise and care."
-            />
-          </FadeInSection>
-          <div className="services-grid">
-            {SERVICES.slice(0, 6).map((s) => (
-              <FadeInSection key={s.id}>
-                <div className="glass-card service-card">
-                  <div className="service-card-icon">
-                    <DynamicIcon name={s.icon} size={36} />
+          <div className="section-header text-center">
+            <span className="badge badge-vibrant">Our Services</span>
+            <h2 className="title-lg">What We <span className="gradient-text">Offer</span></h2>
+            <p className="section-description mx-auto">
+              Comprehensive cooling and appliance solutions tailored to your needs.
+              We service all major brands with expertise and care.
+            </p>
+          </div>
+          <div className="services-vibrant-grid">
+            {SERVICES_DATA.map((s, i) => (
+              <FadeInSection key={i} delay={i * 0.1}>
+                <div className="service-vibrant-card">
+                  <div className="service-card-visual">
+                    <img src={s.image} alt={s.title} className="service-card-img" />
+                    <div className="service-card-overlay" />
+                    <div className="service-card-badge">{s.badge}</div>
+                    <div className="service-card-icon-float">
+                      <DynamicIcon name={s.icon} size={24} />
+                    </div>
                   </div>
-                  <h3>{s.title}</h3>
-                  <p>{s.description}</p>
+                  <div className="service-card-body">
+                    <h3 className="service-card-title">{s.title}</h3>
+                    <p className="service-card-text">{s.description}</p>
+                    <Link to="/services" className="service-card-link">
+                      Explore Service <DynamicIcon name="arrow-right" size={16} />
+                    </Link>
+                  </div>
                 </div>
               </FadeInSection>
             ))}
           </div>
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <FadeInSection>
-              <Link to="/services" className="btn btn-outline">
-                View All Services <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
-              </Link>
-            </FadeInSection>
+          <div className="services-cta">
+            <Link to="/services" className="btn btn-primary btn-lg">
+              View All Services <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
+            </Link>
           </div>
         </div>
       </section>

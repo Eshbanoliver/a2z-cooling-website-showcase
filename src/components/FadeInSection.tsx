@@ -3,9 +3,14 @@ import React, { useEffect, useRef, useState } from 'react'
 interface FadeInSectionProps {
   children: React.ReactNode;
   className?: string;
+  delay?: number;
 }
 
-export default function FadeInSection({ children, className = '' }: FadeInSectionProps) {
+export default function FadeInSection({ 
+  children, 
+  className = '', 
+  delay = 0 
+}: FadeInSectionProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -27,6 +32,7 @@ export default function FadeInSection({ children, className = '' }: FadeInSectio
     <div
       ref={ref}
       className={`fade-in${visible ? ' visible' : ''} ${className}`}
+      style={{ transitionDelay: `${delay}s` }}
     >
       {children}
     </div>
