@@ -506,7 +506,7 @@ export default function Home() {
       </section>
 
       {/* ===== FAQ SECTION ===== */}
-      <section className="section section-light" id="faq">
+      <section className="section faq-vibrant-section" id="faq">
         <div className="container">
           <FadeInSection>
             <SectionTitle
