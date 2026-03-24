@@ -387,7 +387,7 @@ export default function Home() {
       {/* ===== WHY CHOOSE US VIBRANT ===== */}
       <section className="section wcu-vibrant-section" id="why-choose-us">
         <div className="wcu-mesh-bg" />
-        <div className="container relative z-10">
+        <div className="container">
           <FadeInSection>
             <SectionTitle
               badge="Why Choose Us"
