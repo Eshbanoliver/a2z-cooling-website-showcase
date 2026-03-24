@@ -1392,40 +1392,148 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.5);
 }
 
-/* ===== CORE VALUES ===== */
-.values-grid {
+/* ===== CORE VALUES VIBRANT ===== */
+.core-values-vibrant {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: var(--white);
+  background-image: 
+    radial-gradient(var(--blue) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-attachment: fixed;
+}
+
+.core-values-vibrant .title-lg,
+.core-values-vibrant h2 {
+  color: var(--navy) !important;
+}
+
+.core-values-vibrant .section-description,
+.core-values-vibrant p {
+  color: var(--gray-600) !important;
+}
+
+/* Ensure card text remains white */
+.core-values-vibrant .value-vibrant-card h3,
+.core-values-vibrant .value-vibrant-card p {
+  color: var(--white) !important;
+}
+
+.core-values-vibrant::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 10%, rgba(123, 184, 255, 0.05), transparent 40%),
+              radial-gradient(circle at 90% 90%, rgba(184, 169, 255, 0.05), transparent 40%);
+  pointer-events: none;
+}
+
+.section-blob-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--blue);
+  width: 600px;
+  height: 600px;
+  opacity: 0.03;
+}
+
+.values-vibrant-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
 }
 
-.value-card {
-  padding: 32px;
+.value-vibrant-card {
+  padding: 50px 30px;
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(5, 15, 42, 0.1);
   text-align: center;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
 }
 
-.value-icon {
-  width: 52px;
-  height: 52px;
-  background: rgba(123, 184, 255, 0.12);
-  border-radius: 50%;
+/* Consistent Light Purple Theme */
+.value-vibrant-card:nth-child(1),
+.value-vibrant-card:nth-child(2),
+.value-vibrant-card:nth-child(3),
+.value-vibrant-card:nth-child(4),
+.value-vibrant-card:nth-child(5),
+.value-vibrant-card:nth-child(6) { 
+  --accent: #ffffff; 
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+}
+
+.value-vibrant-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(118, 75, 162, 0.3), 0 10px 40px rgba(255, 255, 255, 0.2);
+}
+
+.value-icon-container {
+  width: 76px;
+  height: 76px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  margin: 0 auto 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
 
-.value-card h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+.value-vibrant-card:hover .value-icon-container {
+  background: var(--white);
+  color: #051542;
+  transform: rotateY(180deg) scale(1.1);
 }
 
-.value-card p {
-  color: var(--gray-500);
-  font-size: 0.9rem;
-  line-height: 1.6;
+.value-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.value-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.value-accent-line {
+  width: 30px;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.value-vibrant-card:hover .value-accent-line {
+  width: 60px;
+}
+
+.value-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--gray-600);
 }
 
 /* ===== WHY CHOOSE US ===== */
