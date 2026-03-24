@@ -10,6 +10,7 @@ import { BUSINESS, SERVICES, TESTIMONIALS, FAQS, METRICS, VALUES } from '../data
 import hero1 from '../assets/hero-1.jpg'
 import hero2 from '../assets/hero-2.jpg'
 import hero3 from '../assets/hero-3.jpg'
+import aboutImg from '../assets/about-img.jpg'
 
 const HERO_SLIDES = [
   {
@@ -126,54 +127,63 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT PREVIEW ===== */}
-      <section className="section section-ice" id="about-preview">
+      <section className="section about-preview-section" id="about-preview">
+        <div className="section-blob section-blob-1" />
+        <div className="section-blob section-blob-2" />
+        
         <div className="container">
           <FadeInSection>
             <div className="about-preview">
               <div className="about-preview-content">
-                <span className="badge">
+                <span className="badge badge-vibrant">
                   <DynamicIcon name="star" size={14} style={{ marginRight: '6px' }} />
                   About Us
                 </span>
-                <h2>Your Reliable Partner for<br /><span className="gradient-text">Cooling Solutions</span></h2>
-                <p>
+                <h2 className="title-huge">Your Reliable Partner for<br /><span className="gradient-text">Cooling Solutions</span></h2>
+                <p className="description-lg">
                   A2Z Cooling Point has been serving Jaipur for over a decade, providing
                   top-notch cooling and appliance repair services. Our team of certified
                   technicians handles everything from AC installations to complex repairs
                   for all major brands.
                 </p>
-                <div className="about-features">
+                <div className="about-features-vident">
                   {[
-                    'Certified Technicians',
-                    'All Major Brands',
-                    'Same Day Service',
-                    'Genuine Spare Parts'
-                  ].map((text) => (
-                    <div className="about-feature" key={text}>
-                      <span className="about-feature-icon">
-                        <DynamicIcon name="check" size={16} />
+                    { text: 'Certified Technicians', icon: 'shield-check' },
+                    { text: 'All Major Brands', icon: 'gem' },
+                    { text: 'Same Day Service', icon: 'bolt' },
+                    { text: 'Genuine Spare Parts', icon: 'wrench' }
+                  ].map((item) => (
+                    <div className="about-feature-item" key={item.text}>
+                      <span className="about-feature-item-icon">
+                        <DynamicIcon name={item.icon} size={20} />
                       </span>
-                      <span className="about-feature-text">{text}</span>
+                      <span className="about-feature-item-text">{item.text}</span>
                     </div>
                   ))}
                 </div>
-                <div style={{ marginTop: '28px' }}>
-                  <Link to="/about" className="btn btn-navy btn-sm">
-                    Learn More About Us <DynamicIcon name="arrow-right" size={16} style={{ marginLeft: '8px' }} />
+                <div className="about-cta-wrapper">
+                  <Link to="/about" className="btn btn-primary btn-lg">
+                    Learn More About Us <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
                   </Link>
                 </div>
               </div>
-              <div className="about-preview-image">
-                <div className="about-preview-card">
-                  <div className="about-card-icon">
-                    <DynamicIcon name="snowflake" size={32} />
+              <div className="about-preview-visual">
+                <div className="about-main-image">
+                  <img src={aboutImg} alt="Precision Cooling Tech" />
+                  <div className="image-overlay-vibrant" />
+                </div>
+                <div className="about-floating-card glass-vibrant">
+                  <div className="about-card-icon-huge">
+                    <DynamicIcon name="snowflake" size={40} />
                   </div>
-                  <h3 className="about-card-title">10+ Years of Excellence</h3>
-                  <p className="about-card-text">
-                    Established with a vision to provide reliable and affordable cooling
-                    solutions, A2Z Cooling Point has grown to become Jaipur's most trusted
-                    service provider.
+                  <h3>10+ Years of Excellence</h3>
+                  <p>
+                    Jaipur's most trusted cooling service provider.
                   </p>
+                </div>
+                <div className="about-experience-badge">
+                  <span className="huge-number">10</span>
+                  <span className="badge-text">Years of<br />Trust</span>
                 </div>
               </div>
             </div>
