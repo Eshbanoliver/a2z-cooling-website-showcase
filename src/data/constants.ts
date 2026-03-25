@@ -13,6 +13,8 @@ export interface Service {
   icon: string;
   title: string;
   description: string;
+  image?: string;
+  badge?: string;
 }
 
 export interface Testimonial {
@@ -55,60 +57,80 @@ export const SERVICES: Service[] = [
     icon: 'wrench',
     title: 'AC Repair & Jet Pump Service',
     description: 'Expert AC repair, jet pump cleaning, gas charging (R22, R32, R410), and complete troubleshooting for all brands. We ensure peak performance and longevity.',
+    image: '/service-1.jpg',
+    badge: 'Urgent'
   },
   {
     id: 'ac-installation',
     icon: 'layout',
     title: 'AC Installation & Copper Piping',
     description: 'Professional installation for Split and Window ACs with expert copper pipe fitting and decorative ducting for a clean, efficient setup.',
+    image: '/service-7.jpg',
+    badge: 'Expert'
   },
   {
     id: 'hvac-solutions',
     icon: 'wind',
     title: 'Commercial HVAC & VRV/VRF',
     description: 'Advanced HVAC solutions including Cassette AC, Tower AC, Ductable AC, Package AC, and high-efficiency VRV/VRF system design and maintenance.',
+    image: '/service-8.jpg',
+    badge: 'Industrial'
   },
   {
     id: 'ac-amc',
     icon: 'shield-check',
     title: 'AC AMC (Annual Maintenance)',
     description: 'Preventive maintenance contracts for homes and businesses. Regular checkups, cleaning, and priority support to avoid unexpected breakdowns.',
+    image: '/service-5.jpg',
+    badge: 'Value'
   },
   {
     id: 'car-ac-service',
     icon: 'car',
     title: 'Car AC Repair & Gas Charging',
     description: 'Complete Car AC diagnostic, repairing work, and high-quality gas charging to keep you cool on the road during Jaipur’s summers.',
+    image: '/service-9.jpg',
+    badge: 'Mobile'
   },
   {
     id: 'solar-ac',
     icon: 'sun',
     title: 'Solar AC Solutions',
     description: 'Eco-friendly solar air conditioning systems. Go green while staying cool with our energy-efficient solar AC sales and installation.',
+    image: '/service-4.jpg',
+    badge: 'Eco'
   },
   {
     id: 'refrigeration',
     icon: 'snowflake',
     title: 'Refrigeration Equipment',
     description: 'Repair and maintenance for all kinds of air conditioners and refrigeration equipment, ensuring consistent cooling for residential and commercial use.',
+    image: '/service-10.jpg',
+    badge: 'Commercial'
   },
   {
     id: 'geyser-repair',
     icon: 'droplets',
     title: 'Geyser Repair & Service',
     description: 'Expert geyser repair, thermostat replacement, element fixing, and regular maintenance for all types of water heaters.',
+    image: '/service-2.jpg',
+    badge: 'Essential'
   },
   {
     id: 'washing-machine',
     icon: 'refresh-cw',
     title: 'Washing Machine Repair',
     description: 'Professional washing machine repair and service for top-load, front-load, and semi-automatic models of all major brands.',
+    image: '/service-3.jpg',
+    badge: 'Expert'
   },
   {
     id: 'old-ac-deals',
     icon: 'repeat',
     title: 'Old AC Sale & Purchase',
     description: 'Best deals on second-hand air conditioners. We provide certified used ACs with warranty and buy your old units at competitive prices.',
+    image: '/service-11.jpg',
+    badge: 'Sales'
   },
 ]
 

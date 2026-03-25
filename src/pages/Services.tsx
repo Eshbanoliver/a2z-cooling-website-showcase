@@ -6,6 +6,27 @@ import DynamicIcon from '../components/DynamicIcon'
 import { SERVICES, BUSINESS } from '../data/constants'
 import aboutHero from '../assets/about-hero-new.png'
 
+import service1 from '../assets/service-1.jpg'
+import service2 from '../assets/service-2.jpg'
+import service3 from '../assets/service-3.jpg'
+import service4 from '../assets/service-4.jpg'
+import service5 from '../assets/service-5.jpg'
+import service6 from '../assets/service-6.jpg'
+import service7 from '../assets/service-7.jpg'
+
+const IMAGE_MAP: Record<string, string> = {
+  'ac-repair': service1,
+  'ac-installation': service7,
+  'hvac-solutions': service6,
+  'ac-amc': service5,
+  'car-ac-service': service2,
+  'solar-ac': service4,
+  'refrigeration': service1,
+  'geyser-repair': service2,
+  'washing-machine': service3,
+  'old-ac-deals': service5
+}
+
 export default function Services() {
   const whatsappUrl = `https://wa.me/${BUSINESS.phoneClean}?text=${encodeURIComponent('Hello! I am interested in your services. Please provide more details.')}`
 
@@ -28,15 +49,25 @@ export default function Services() {
             />
           </FadeInSection>
 
-          <div className="services-grid">
-            {SERVICES.map((s) => (
-              <FadeInSection key={s.id}>
-                <div className="glass-card service-card">
-                  <div className="service-card-icon">
-                    <DynamicIcon name={s.icon} size={36} />
+          <div className="services-vibrant-grid">
+            {SERVICES.map((s, i) => (
+              <FadeInSection key={s.id} delay={i * 0.1}>
+                <div className="service-vibrant-card">
+                  <div className="service-card-visual">
+                    <img src={IMAGE_MAP[s.id] || service1} alt={s.title} className="service-card-img" />
+                    <div className="service-card-overlay" />
+                    <div className="service-card-badge">{s.badge || 'New'}</div>
+                    <div className="service-card-icon-float">
+                      <DynamicIcon name={s.icon} size={24} />
+                    </div>
                   </div>
-                  <h3>{s.title}</h3>
-                  <p>{s.description}</p>
+                  <div className="service-card-body">
+                    <h3 className="service-card-title">{s.title}</h3>
+                    <p className="service-card-text">{s.description}</p>
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="service-card-link">
+                      Enquire Now <DynamicIcon name="arrow-right" size={16} />
+                    </a>
+                  </div>
                 </div>
               </FadeInSection>
             ))}
