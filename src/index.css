@@ -3419,3 +3419,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 30px;
   }
 }
+
+.expertise-header .title-lg {
+  color: var(--white) !important;
+}
+
+.expertise-header .description-lg {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.badge-white {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text-white { color: var(--white) !important; }
+.text-white-80 { color: rgba(255, 255, 255, 0.8) !important; }
