@@ -40,10 +40,7 @@ export default function Navbar() {
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="main-navbar">
         <div className="container">
           <Link to="/" className="navbar-brand" aria-label="Home">
-            <span className="brand-icon">
-              <DynamicIcon name="snowflake" size={24} />
-            </span>
-            <span>{BUSINESS.name}</span>
+            <img src="/logo.png" alt="A2Z Cooling Point" className="navbar-logo" />
           </Link>
 
           <div className={`navbar-links${mobileOpen ? ' open' : ''}`}>

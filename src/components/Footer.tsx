@@ -34,10 +34,7 @@ export default function Footer() {
           {/* Brand & Social */}
           <div className="footer-brand-section">
             <div className="footer-brand">
-              <span className="brand-icon">
-                <DynamicIcon name="snowflake" size={24} />
-              </span>
-              <span>{BUSINESS.name}</span>
+              <img src="/logo.png" alt="A2Z Cooling Point" className="footer-logo" />
             </div>
             <p className="footer-desc">
               Your trusted partner for all cooling and appliance solutions in Jaipur. 
