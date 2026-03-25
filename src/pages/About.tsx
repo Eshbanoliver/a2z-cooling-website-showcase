@@ -150,25 +150,28 @@ export default function About() {
         </div>
       </section>
 
-      {/* ===== CORE VALUES ===== */}
-      <section className="section section-light" id="about-values">
+      {/* ===== CORE VALUES SECTION ===== */}
+      <section className="section core-values-vibrant" id="about-values">
+        <div className="section-blob section-blob-3" />
         <div className="container">
           <FadeInSection>
             <SectionTitle
               badge="Core Values"
-              title={<>Values We <span className="gradient-text">Live By</span></>}
-              description="These principles are at the heart of every interaction and service we provide."
+              badgeClass="badge-blue"
+              title={<>Values That <span className="gradient-text">Define Us</span></>}
+              description="These principles guide every decision we make and every service we deliver. We are committed to excellence in every repair."
             />
           </FadeInSection>
-          <div className="values-grid">
+          <div className="values-vibrant-grid">
             {VALUES.map((v, i) => (
-              <FadeInSection key={i}>
-                <div className="glass-card value-card">
-                  <div className="value-icon">
+              <FadeInSection key={i} delay={i * 0.1}>
+                <div className="value-vibrant-card">
+                  <div className="value-icon-container">
                     <DynamicIcon name={v.icon} size={32} />
                   </div>
-                  <h3>{v.title}</h3>
-                  <p>{v.description}</p>
+                  <h3 className="value-title">{v.title}</h3>
+                  <div className="value-accent-line" />
+                  <p className="value-description">{v.description}</p>
                 </div>
               </FadeInSection>
             ))}
