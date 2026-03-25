@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
@@ -128,39 +127,6 @@ export default function Services() {
               </div>
             </FadeInSection>
           </div>
-        </div>
-      </section>
-
-      <section className="section section-light" id="detailed-cta">
-        <div className="container">
-          <FadeInSection>
-            <div className="cta-banner">
-              <div className="cta-banner-content">
-                <h2>Looking for something else?</h2>
-                <p>We provide custom solutions for residential and commercial cooling needs. Get in touch with our experts now.</p>
-              </div>
-              <div className="cta-banner-buttons">
-                <a href={`tel:${BUSINESS.phone}`} className="btn btn-navy">
-                  <DynamicIcon name="phone" size={18} style={{ marginRight: '8px' }} />
-                  Call Now
-                </a>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                  <DynamicIcon name="whatsapp" size={18} style={{ marginRight: '8px' }} />
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
-      <section className="section section-ice">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <FadeInSection>
-            <Link to="/contact" className="btn btn-outline btn-lg">
-              Still Have Questions? Contact Us <DynamicIcon name="arrow-right" size={18} style={{ marginLeft: '8px' }} />
-            </Link>
-          </FadeInSection>
         </div>
       </section>
     </>
