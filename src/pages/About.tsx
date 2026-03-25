@@ -179,8 +179,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
-      <section className="cta-section" id="about-cta">
+      {/* ===== CTA SECTION ===== */}
+      <section className="cta-section" id="about-cta" style={{ marginBottom: '100px', borderRadius: '40px' }}>
         <div className="container">
           <FadeInSection>
             <div className="cta-content">
