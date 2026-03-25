@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
 import DynamicIcon from '../components/DynamicIcon'
 import { SERVICES, BUSINESS } from '../data/constants'
+import aboutHero from '../assets/about-hero-new.png'
 
 export default function Services() {
   const whatsappUrl = `https://wa.me/${BUSINESS.phoneClean}?text=${encodeURIComponent('Hello! I am interested in your services. Please provide more details.')}`
@@ -13,6 +14,8 @@ export default function Services() {
       <PageHeader
         title="Our Services"
         subtitle="Comprehensive cooling and appliance solutions for your home and business"
+        image={aboutHero}
+        fullWidth={true}
       />
 
       <section className="section section-ice" id="services-grid">
