@@ -2065,7 +2065,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
   background: #030816;
   color: var(--gray-400);
-  padding: 100px 0 0;
+  padding: 80px 0 0;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(123, 184, 255, 0.1);
@@ -2100,7 +2100,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer Top CTA */
 .footer-top {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .footer-cta-card {
@@ -2153,7 +2153,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1.5fr 0.8fr 1fr 1.2fr;
   gap: 60px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .footer-brand {
@@ -2182,7 +2182,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-desc {
   font-size: 0.95rem;
   line-height: 1.8;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   color: var(--gray-400);
 }
 
@@ -2255,8 +2255,12 @@ h1, h2, h3, h4, h5, h6 {
   gap: 16px;
   align-items: flex-start;
   font-size: 0.95rem;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   transition: var(--transition);
+}
+
+.footer-contact-item:last-child {
+  margin-bottom: 0;
 }
 
 .footer-contact-item:hover {
@@ -2285,8 +2289,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 40px 0;
-  margin-top: 20px;
+  padding: 30px 0;
+  margin-top: 0;
 }
 
 .footer-bottom-content {
