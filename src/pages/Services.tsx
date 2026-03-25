@@ -44,6 +44,62 @@ export default function Services() {
         </div>
       </section>
 
+      {/* ===== SPECIALIZED EXPERTISE ===== */}
+      <section className="section bg-gradient-vibrant" id="technical-expertise">
+        <div className="container">
+          <FadeInSection>
+            <div className="expertise-header text-center">
+              <span className="badge badge-white">Specialized Expertise</span>
+              <h2 className="title-lg text-white">Advanced <span className="gradient-text-light">AC Solutions</span></h2>
+              <p className="description-lg text-white-80">
+                We are industry leaders in designing, installing, and maintaining 
+                complex cooling systems for large residences and commercial spaces.
+              </p>
+            </div>
+          </FadeInSection>
+          
+          <div className="ac-types-grid">
+            {[
+              { title: 'Cassette AC', desc: 'Ceiling-mounted, multi-way airflow solutions.' },
+              { title: 'Ductable AC', desc: 'Centralized cooling for large open spaces.' },
+              { title: 'Tower AC', desc: 'Powerful vertical cooling for high-traffic areas.' },
+              { title: 'VRV & VRF Systems', desc: 'Variable Refrigerant Flow for smart temperature control.' },
+              { title: 'Package AC', desc: 'Self-contained units for easy installation.' },
+              { title: 'Cassette AC', desc: '360-degree cooling comfort for premium interiors.' }
+            ].map((type, i) => (
+              <FadeInSection key={i} delay={i * 0.1}>
+                <div className="ac-type-badge">
+                  <div className="badge-icon">
+                    <DynamicIcon name="snowflake" size={20} />
+                  </div>
+                  <div className="badge-content">
+                    <h4>{type.title}</h4>
+                    <p>{type.desc}</p>
+                  </div>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
+
+          <div className="emergency-notice mt-12 text-center">
+            <FadeInSection>
+              <div className="glass-vibrant emergency-banner">
+                <div className="emergency-icon-glow">
+                  <DynamicIcon name="zap" size={24} />
+                </div>
+                <div className="emergency-text">
+                  <h3>Emergency Service in Udaipur & Jaipur</h3>
+                  <p>Need urgent AC repair or jet pump service? We provide rapid onsite support for all cooling emergencies.</p>
+                </div>
+                <a href={`tel:${BUSINESS.phone}`} className="btn btn-white btn-sm">
+                   Call Now
+                </a>
+              </div>
+            </FadeInSection>
+          </div>
+        </div>
+      </section>
+
       <section className="section section-light" id="detailed-cta">
         <div className="container">
           <FadeInSection>
