@@ -5,6 +5,7 @@ import FadeInSection from '../components/FadeInSection'
 import DynamicIcon from '../components/DynamicIcon'
 import { BUSINESS, VALUES, METRICS } from '../data/constants'
 import aboutHero from '../assets/about-hero-new.png'
+import trustVisual from '../assets/trust-visual.png'
 
 export default function About() {
   return (
@@ -22,6 +23,7 @@ export default function About() {
           <FadeInSection>
             <div className="about-intro">
               <div className="about-content">
+                <span className="badge">Established Expertise</span>
                 <h2>Welcome to <span className="gradient-text">A2Z Cooling Point</span></h2>
                 <p>
                   Founded with a passion for delivering exceptional cooling solutions,
@@ -37,25 +39,33 @@ export default function About() {
                     'Solar AC Solutions',
                     'Multi-Brand AC Sales',
                     'Annual Maintenance'
-                  ].map((item) => (
-                    <div className="about-expertise-item" key={item}>
-                      <span className="check">
-                        <DynamicIcon name="check" size={16} />
-                      </span>
-                      <span>{item}</span>
-                    </div>
+                  ].map((item, index) => (
+                    <FadeInSection key={item} delay={index * 0.1}>
+                      <div className="about-expertise-item">
+                        <span className="check">
+                          <DynamicIcon name="check" size={14} />
+                        </span>
+                        <span>{item}</span>
+                      </div>
+                    </FadeInSection>
                   ))}
                 </div>
               </div>
               <div className="about-intro-image">
-                <div className="icon">
-                  <DynamicIcon name="map-pin" size={40} />
+                <div 
+                  className="about-intro-image-bg" 
+                  style={{ backgroundImage: `url(${trustVisual})` }}
+                ></div>
+                <div className="about-intro-overlay"></div>
+                <div className="content">
+                  <div className="icon-box">
+                    <DynamicIcon name="map-pin" size={40} />
+                  </div>
+                  <h3>A Decade of Trust</h3>
+                  <p>
+                    Serving 5000+ happy customers across Jaipur with certified expertise and unmatched support.
+                  </p>
                 </div>
-                <h3>A Decade of Trust</h3>
-                <p>
-                  Serving 5000+ happy customers across Jaipur with certified expertise,
-                  genuine parts, and unmatched after-sales support.
-                </p>
               </div>
             </div>
           </FadeInSection>
