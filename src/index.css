@@ -2474,12 +2474,51 @@ h1, h2, h3, h4, h5, h6 {
   padding: 180px 0 100px;
 }
 
+/* Full Width Page Header */
+.page-header-full {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 220px 0 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.page-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5, 15, 42, 0.85) 0%, rgba(5, 15, 42, 0.6) 100%);
+  z-index: 1;
+}
+
+.page-header-full .page-header-content {
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-header-full .page-header-text h1 {
+  font-size: 5rem;
+  margin-bottom: 24px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.page-header-full .page-header-text p.subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .page-header-content {
   display: flex;
   align-items: center;
   gap: 80px;
   position: relative;
   z-index: 10;
+  width: 100%;
 }
 
 .page-header-text {

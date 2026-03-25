@@ -4,7 +4,7 @@ import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
 import DynamicIcon from '../components/DynamicIcon'
 import { BUSINESS, VALUES, METRICS } from '../data/constants'
-import aboutHero from '../assets/about-hero.png'
+import aboutHero from '../assets/about-hero-new.png'
 
 export default function About() {
   return (
@@ -13,6 +13,7 @@ export default function About() {
         title="About Us"
         subtitle="Know more about A2Z Cooling Point — your trusted cooling partner in Jaipur"
         image={aboutHero}
+        fullWidth={true}
       />
 
       {/* ===== COMPANY INTRODUCTION ===== */}
