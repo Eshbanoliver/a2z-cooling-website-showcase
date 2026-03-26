@@ -3431,8 +3431,21 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 16px;
   }
 
+  .section {
+    padding: 40px 0;
+  }
+
   .hero-section {
     padding-top: 70px;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .navbar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 6px 0;
   }
 
   .navbar-logo {
@@ -3449,11 +3462,17 @@ h1, h2, h3, h4, h5, h6 {
 
   .hero-badge {
     font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
 
   .hero-buttons .btn {
@@ -3462,24 +3481,233 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-stats {
-    margin-top: 48px;
+    margin-top: 40px;
+    gap: 16px;
+  }
+
+  .hero-stat {
+    flex: 1 1 calc(50% - 8px);
+    padding: 12px;
   }
 
   .hero-stat-number {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.7rem;
+  }
+
+  /* About Preview */
+  .about-preview-section {
+    padding: 60px 0;
+  }
+
+  .about-preview {
+    gap: 40px;
+  }
+
+  .title-huge {
+    font-size: 1.8rem;
+  }
+
+  .description-lg {
+    font-size: 1rem;
+  }
+
+  .about-features-vident {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-feature-item {
+    padding: 14px;
+  }
+
+  .about-floating-card {
+    display: none;
+  }
+
+  .about-experience-badge {
+    display: none;
+  }
+
+  /* Metrics */
+  .metrics-section {
+    padding: 40px 0;
   }
 
   .metric-card {
     padding: 24px 16px;
   }
 
+  .metric-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+
   .metric-value {
     font-size: 2rem;
+  }
+
+  .metric-label {
+    font-size: 0.8rem;
+  }
+
+  /* Services Slider */
+  .section-cloud {
+    padding: 60px 0;
+  }
+
+  .services-slider-container {
+    margin: 30px auto 20px;
+  }
+
+  .service-card-visual {
+    height: 180px;
+  }
+
+  .service-card-body {
+    padding: 30px 20px 24px;
+  }
+
+  .service-card-title {
+    font-size: 1.2rem;
+  }
+
+  .service-card-text {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  /* Mission & Vision */
+  .mission-vision-vibrant {
+    padding: 60px 0;
+  }
+
+  .mv-vibrant-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mv-card-vibrant {
+    padding: 30px 20px;
+  }
+
+  .mv-title {
+    font-size: 1.4rem;
+  }
+
+  .mv-text {
+    font-size: 0.95rem;
+  }
+
+  .mv-icon-float {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Core Values */
+  .core-values-vibrant {
+    padding: 60px 0;
+  }
+
+  .values-vibrant-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .value-vibrant-card {
+    padding: 30px 20px;
+  }
+
+  /* Why Choose Us */
+  .wcu-vibrant-section {
+    padding: 60px 0;
+  }
+
+  .wcu-vibrant-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .wcu-vibrant-card {
+    padding: 24px 20px;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 60px 0;
+    margin-bottom: 60px;
+    border-radius: 24px;
+  }
+
+  .cta-content {
+    padding: 40px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-content p {
+    font-size: 0.9rem;
   }
 
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Testimonials */
+  .testimonials-vibrant-section {
+    padding: 60px 0;
+  }
+
+  .testimonial-vibrant-card {
+    min-width: 280px;
+    padding: 24px;
+  }
+
+  .testimonials-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-page-card {
+    padding: 24px;
+  }
+
+  /* FAQ */
+  .faq-vibrant-section {
+    padding: 60px 0;
+  }
+
+  /* Contact Page */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-form-container {
+    padding: 24px 16px;
+  }
+
+  .contact-info-card {
+    padding: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .contact-action-buttons {
@@ -3489,6 +3717,105 @@ h1, h2, h3, h4, h5, h6 {
   .contact-action-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Map */
+  #location-map iframe {
+    height: 280px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  /* Page Header */
+  .page-header {
+    padding: 100px 0 60px;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+  }
+
+  /* Section Headers */
+  .section-header .title-lg,
+  .section-title h2,
+  h2.title-lg {
+    font-size: 1.6rem;
+  }
+
+  .section-description,
+  .section-header .section-description {
+    font-size: 0.9rem;
+  }
+
+  /* Services page grid */
+  .services-vibrant-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Technical Expertise */
+  #technical-expertise {
+    padding: 60px 0;
+    margin-bottom: 60px;
+  }
+
+  .ac-types-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .ac-type-badge {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .ac-type-badge .badge-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .badge-content h4 {
+    font-size: 1rem;
+  }
+
+  .badge-content p {
+    font-size: 0.8rem;
+  }
+
+  .emergency-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+    margin-top: 40px;
+    gap: 16px;
+  }
+
+  .emergency-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .emergency-text p {
+    font-size: 0.9rem;
+  }
+
+  .expertise-header {
+    text-align: center;
+    padding: 0 10px;
   }
 }
 
