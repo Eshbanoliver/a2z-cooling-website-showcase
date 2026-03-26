@@ -41,17 +41,8 @@ export default function Footer() {
               Reliable service for all major brands with guaranteed satisfaction.
             </p>
             <div className="footer-social">
-              <a href="#" aria-label="Facebook" className="social-link">
-                <DynamicIcon name="facebook" size={18} />
-              </a>
-              <a href="#" aria-label="Twitter" className="social-link">
-                <DynamicIcon name="twitter" size={18} />
-              </a>
-              <a href="#" aria-label="Instagram" className="social-link">
+              <a href={BUSINESS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">
                 <DynamicIcon name="instagram" size={18} />
-              </a>
-              <a href="#" aria-label="Linkedin" className="social-link">
-                <DynamicIcon name="linkedin" size={18} />
               </a>
             </div>
           </div>

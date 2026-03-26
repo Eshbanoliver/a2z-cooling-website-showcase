@@ -6,6 +6,7 @@ export interface Business {
   address: string;
   city: string;
   whatsappMessage: string;
+  instagram: string;
 }
 
 export interface Service {
@@ -49,6 +50,7 @@ export const BUSINESS: Business = {
   address: 'New Sanganer Road, Heera Path, Opp. Indian Petrol Pump, Mansarovar, Jaipur – 302020',
   city: 'Jaipur',
   whatsappMessage: 'Hello! I need cooling & appliance service. Please assist me.',
+  instagram: 'https://www.instagram.com/a2zcoolingpoint/',
 }
 
 export const SERVICES: Service[] = [
