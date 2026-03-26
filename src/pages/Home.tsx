@@ -89,7 +89,11 @@ const SERVICES_DATA = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [activeService, setActiveService] = useState(0)
   const whatsappUrl = `https://wa.me/${BUSINESS.phoneClean}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`
+
+  const nextService = () => setActiveService((prev) => (prev + 1) % SERVICES_DATA.length)
+  const prevService = () => setActiveService((prev) => (prev - 1 + SERVICES_DATA.length) % SERVICES_DATA.length)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -272,27 +276,50 @@ export default function Home() {
               We service all major brands with expertise and care.
             </p>
           </div>
-          <div className="services-vibrant-grid">
-            {SERVICES_DATA.map((s, i) => (
-              <FadeInSection key={i} delay={i * 0.1}>
-                <div className="service-vibrant-card">
-                  <div className="service-card-visual">
-                    <img src={s.image} alt={s.title} className="service-card-img" />
-                    <div className="service-card-overlay" />
-                    <div className="service-card-badge">{s.badge}</div>
-                    <div className="service-card-icon-float">
-                      <DynamicIcon name={s.icon} size={24} />
+          <div className="services-slider-container">
+            <button className="service-nav prev" onClick={prevService} aria-label="Previous Service">
+              <DynamicIcon name="chevron-left" size={24} />
+            </button>
+            
+            <div className="services-track-wrapper">
+              <div className="services-track" style={{ transform: `translateX(-${activeService * 100}%)` }}>
+                {SERVICES_DATA.map((s, i) => (
+                  <div key={i} className="service-slide">
+                    <div className="service-vibrant-card">
+                      <div className="service-card-visual">
+                        <img src={s.image} alt={s.title} className="service-card-img" />
+                        <div className="service-card-overlay" />
+                        <div className="service-card-badge">{s.badge}</div>
+                        <div className="service-card-icon-float">
+                          <DynamicIcon name={s.icon} size={24} />
+                        </div>
+                      </div>
+                      <div className="service-card-body">
+                        <h3 className="service-card-title">{s.title}</h3>
+                        <p className="service-card-text">{s.description}</p>
+                        <Link to="/services" className="service-card-link">
+                          Explore Service <DynamicIcon name="arrow-right" size={16} />
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                  <div className="service-card-body">
-                    <h3 className="service-card-title">{s.title}</h3>
-                    <p className="service-card-text">{s.description}</p>
-                    <Link to="/services" className="service-card-link">
-                      Explore Service <DynamicIcon name="arrow-right" size={16} />
-                    </Link>
-                  </div>
-                </div>
-              </FadeInSection>
+                ))}
+              </div>
+            </div>
+
+            <button className="service-nav next" onClick={nextService} aria-label="Next Service">
+              <DynamicIcon name="chevron-right" size={24} />
+            </button>
+          </div>
+
+          <div className="service-dots">
+            {SERVICES_DATA.map((_, i) => (
+              <button 
+                key={i} 
+                className={`service-dot ${i === activeService ? 'active' : ''}`}
+                onClick={() => setActiveService(i)}
+                aria-label={`Go to service ${i + 1}`}
+              />
             ))}
           </div>
           <div className="services-cta">
