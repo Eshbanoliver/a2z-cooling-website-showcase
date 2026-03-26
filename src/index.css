@@ -48,6 +48,7 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --blue-glow: rgba(123, 184, 255, 0.4);
 
   --container: 1200px;
   --container-sm: 900px;
@@ -329,6 +330,19 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(5, 15, 42, 0.35);
 }
+
+.btn-white {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn-white:hover {
+  background: var(--ice);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
 
 .btn-sm {
   padding: 10px 24px;
@@ -3330,11 +3344,18 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+.ac-type-badge:nth-child(1) { --accent: #7BB8FF; --accent-end: #a8d1ff; --accent-glow: rgba(123, 184, 255, 0.4); }
+.ac-type-badge:nth-child(2) { --accent: #B8A9FF; --accent-end: #d4caff; --accent-glow: rgba(184, 169, 255, 0.4); }
+.ac-type-badge:nth-child(3) { --accent: #00D2FF; --accent-end: #92FE9D; --accent-glow: rgba(0, 210, 255, 0.4); }
+.ac-type-badge:nth-child(4) { --accent: #FF512F; --accent-end: #DD2476; --accent-glow: rgba(255, 81, 47, 0.4); }
+.ac-type-badge:nth-child(5) { --accent: #4776E6; --accent-end: #8E54E9; --accent-glow: rgba(71, 118, 230, 0.4); }
+.ac-type-badge:nth-child(6) { --accent: #00b09b; --accent-end: #96c93d; --accent-glow: rgba(0, 176, 155, 0.4); }
+
 .ac-type-badge:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: var(--blue-glow);
+  border-color: var(--accent);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(123, 184, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-glow);
 }
 
 .ac-type-badge .badge-icon {
@@ -3343,11 +3364,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--blue) 0%, #a8d1ff 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-end) 100%);
   color: var(--white);
   border-radius: var(--radius-lg);
   flex-shrink: 0;
-  box-shadow: 0 10px 20px rgba(123, 184, 255, 0.3);
+  box-shadow: 0 10px 20px var(--accent-glow);
 }
 
 .badge-content h4 {
@@ -3430,9 +3451,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .badge-white {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(123, 184, 255, 0.12);
+  color: #7BB8FF;
+  border: 1px solid rgba(123, 184, 255, 0.3);
+  box-shadow: 0 0 15px rgba(123, 184, 255, 0.15);
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .text-white { color: var(--white) !important; }
