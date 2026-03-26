@@ -1,0 +1,10 @@
+# Modern service business robots configuration
+User-agent: *
+Allow: /
+
+# Disallow paths if you have dynamic search result pages or login areas
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap - Update this if a sitemap.xml is generated
+# Sitemap: https://a2zcoolingpoint.com/sitemap.xml
