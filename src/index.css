@@ -3295,6 +3295,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   padding: 120px 0;
   background: var(--gradient-navy);
+  margin-bottom: 100px;
 }
 
 #technical-expertise::before {
