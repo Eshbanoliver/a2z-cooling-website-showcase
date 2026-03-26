@@ -107,7 +107,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="copyright">
-              © Copyright 2026 | <span>{BUSINESS.name}</span> | All Rights Reserved
+              © Copyright 2026 | <Link to="/">{BUSINESS.name}</Link> | All Rights Reserved
             </p>
             <p className="powered-by">
               Powered by{' '}
