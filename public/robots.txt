@@ -6,5 +6,5 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-# Sitemap - Update this if a sitemap.xml is generated
-# Sitemap: https://a2zcoolingpoint.com/sitemap.xml
+# Sitemap
+Sitemap: https://a2zcoolingpoint.com/sitemap.xml
