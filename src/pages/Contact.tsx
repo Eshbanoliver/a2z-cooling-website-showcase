@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
 import DynamicIcon from '../components/DynamicIcon'
 import { BUSINESS } from '../data/constants'
+import aboutHero from '../assets/about-hero-new.png'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -42,6 +43,8 @@ export default function Contact() {
       <PageHeader
         title="Contact Us"
         subtitle="Get in touch with Jaipur's most trusted cooling experts"
+        image={aboutHero}
+        fullWidth={true}
       />
 
       <section className="section section-ice" id="contact-info">

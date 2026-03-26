@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle'
 import FadeInSection from '../components/FadeInSection'
 import DynamicIcon from '../components/DynamicIcon'
 import { TESTIMONIALS } from '../data/constants'
+import aboutHero from '../assets/about-hero-new.png'
 
 export default function Testimonials() {
   return (
@@ -11,6 +12,8 @@ export default function Testimonials() {
       <PageHeader
         title="Testimonials"
         subtitle="Hear what our valued customers have to say about our services"
+        image={aboutHero}
+        fullWidth={true}
       />
 
       <section className="section section-ice" id="all-testimonials">
