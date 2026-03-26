@@ -54,6 +54,7 @@ const DynamicIcon: React.FC<DynamicIconProps> = ({ name, className, size = 24, c
     'quote': 'Quote',
     'chevron-up': 'ChevronUp',
     'chevron-down': 'ChevronDown',
+    'chevron-left': 'ChevronLeft',
     'chevron-right': 'ChevronRight',
     'arrow-right': 'ArrowRight',
     'arrow-up': 'ArrowUp',
